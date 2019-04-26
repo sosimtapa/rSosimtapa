@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    tools:context=".scriptPic4">
+
+    <ImageView
+        android:src="@drawable/street"
+        android:id="@+id/img5"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="400dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="6"
+        android:text=" - 죄송하지만, 제가 정말 급한 일이 있어서 비켜주실 수 있나요?
+ - 제가 이쪽 동네는 처음이라서 길을 잘 모르는데 OOO으로 가려
+면 어디로 가야 하나요?
+ - 저도 잘 몰라서 알려드릴 수가 없네요.. 도움 못 드려서 죄송합니다.
+"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+</LinearLayout>

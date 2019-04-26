@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    tools:context=".scriptPic1">
+
+   <ImageView
+       android:src="@drawable/pubtrans"
+       android:id="@+id/img5"
+       android:layout_gravity="center_horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="400dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:text=" - 이번 역에 내려야해서 조금만 비켜주세요.
+ - 기사님! 아직 할머니(할아버지)께서 내리지 못하셨습니다. 조금만 기다려주세요!
+ - 기사님! 제가 실수로 정차벨을 눌렀습니다. 죄송합니다!
+ - 저기요, 여기는 임산부석이라서 자리를 비어두어야 해요.
+ - 할머니(할아버지) 저는 아까부터 계속 앉아있어서 괜찮으니까 여기에 앉으세요!
+ - 전화하시는데 죄송하지만, 통화는 작은 목소리로 해주세요"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+</LinearLayout>

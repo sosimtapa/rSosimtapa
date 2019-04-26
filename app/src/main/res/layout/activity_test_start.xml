@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:layout_margin="20dp"
+    tools:context=".testStart">
+
+    <ImageView
+        android:layout_marginTop="60dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/cat" />
+
+    <TextView
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:textStyle="bold"
+        android:text="소심타파의 소심도 테스트에 오신것을 환영합니다."/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="앞으로 8개의 질문들이 당신을 기다리고 있습니다."/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="너무 고민하지 마시고 가볍게 문제를 풀어주세요!"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="소심타파와 함께 소심한 성격을 극복해 나가보면 어떨까요?"/>
+
+
+    <Button
+        android:id="@+id/btn_testStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/btn_radius"
+        android:backgroundTint="#ffffff"
+        android:text="Start"
+        android:textColor="#FF6D70"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
+</LinearLayout>

@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "861189631863",
+    "firebase_url": "https://sosimtapaxml.firebaseio.com",
+    "project_id": "sosimtapaxml",
+    "storage_bucket": "sosimtapaxml.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861189631863:android:6d96f58a2cef8008",
+        "android_client_info": {
+          "package_name": "black.kr.hs.mirim.sosimtapaxml"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "861189631863-d3l96su3emrm5epmu3abdlir9o7nqjba.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "black.kr.hs.mirim.sosimtapaxml",
+            "certificate_hash": "0db5474cc34fc2969df0a674c055a7e24ba1894b"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCezu9FSq2zOMfDYP3eSzNX9vIlmambQPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "861189631863-fsqnmt9aefln5g9v4umuclf95g7iheq5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

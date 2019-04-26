@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".testMid">
+
+    <ImageView
+        android:layout_margin="20px"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/rcat" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="당신의 소심도를 판단해보세요"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginVertical="10dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:textColor="#969696"
+        android:text="솔직하게 작성해 보세요"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:layout_weight="2"
+        android:background="@drawable/radius"
+        android:elevation="8dp"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:checked="true"
+            android:text="1. 뒤에서 누군가 수군거리면서 내 얘기를 하고 있는 것 같다." />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="2. 주문한 메뉴와 다른 메뉴가 나왔을 경우 바꾸지도 못한 채 그냥 먹은 적이 있다." />
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="3. 친구들이 나를 두고 과자라도 먹고 있으면 서운하다." />
+
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="4. 상대방이 화를 내면 나 때문이 아닌지 계속 걱정한다." />
+
+        <CheckBox
+            android:id="@+id/checkBox5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5. 미용실에서 머리가 마음에 안 들어도 '감사합니다'라고 말한 적 있다."
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_testNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_radius"
+        android:backgroundTint="#ffffff"
+        android:text="Next"
+        android:textColor="#FF6D70"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
+
+</LinearLayout>

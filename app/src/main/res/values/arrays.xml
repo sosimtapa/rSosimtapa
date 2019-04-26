@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="hobby">
+        <item>책 읽기</item>
+        <item>영화 보기</item>
+        <item>요리하기</item>
+        <item>춤 추기</item>
+        <item>노래 부르기</item>
+        <item>운동하기</item>
+        <item>기타</item>
+    </string-array>
+
+</resources>

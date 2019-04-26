@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/rcat" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="당신의 소심도를 판단해보세요"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:textColor="#969696"
+        android:text="솔직하게 작성해 보세요"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_weight="2"
+        android:background="@drawable/radius"
+        android:elevation="8dp"
+        android:orientation="vertical">
+
+
+        <CheckBox
+            android:id="@+id/checkBox6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp"
+            android:text="6. 버스기사의 실수로 내려야 할 정류장을 지나쳤지만 말 못한 적있다." />
+
+        <CheckBox
+            android:id="@+id/checkBox7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="7. 나의 마음을 상하게 한 상대에게는 정이 가지 않는다." />
+
+        <CheckBox
+            android:id="@+id/checkBox8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="8. 남들이 나를 평가하는 것에 민감하다." />
+
+    </LinearLayout>
+
+<!--    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="선택완료"
+        android:backgroundTint="#FF6D70"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"/>-->
+
+    <!--<TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="선택결과창"
+        android:paddingLeft="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+-->
+    <Button
+        android:id="@+id/btn_testFinish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_radius"
+        android:backgroundTint="#ffffff"
+        android:text="Finish"
+        android:textColor="#FF6D70"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+</LinearLayout>

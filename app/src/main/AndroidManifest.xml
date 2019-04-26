@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="black.kr.hs.mirim.sosimtapaxml">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/cat"
+        android:label="소심타파"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".scriptPic6"></activity>
+        <activity android:name=".scriptPic5" />
+        <activity android:name=".scriptPic4" />
+        <activity android:name=".scriptPic3" />
+        <activity android:name=".scriptPic2" />
+        <activity android:name=".scriptPic1" />
+        <activity android:name=".first">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Main3Audio" />
+        <activity android:name=".Main1WriteActivity" />
+        <activity
+            android:name=".MainActivity1"
+            android:label=" "
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".scriptFlipImage" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".testStart" />
+        <activity android:name=".testMid" />
+    </application>
+
+</manifest>

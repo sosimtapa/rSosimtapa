@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="black.kr.hs.mirim.sosimtapaxml.MainActivity1"
+    tools:showIn="@layout/app_bar_main1"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="소심하다고 생각했나요?"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="left"
+            android:text="자신감을 갖고 말해보세요"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+    <GridLayout
+        android:columnCount="3"
+        android:rowCount="1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity ="center"
+        android:background="#ffffff"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_marginLeft="30dp"
+            android:id="@+id/btn_top1"
+            android:columnCount="0"
+            android:rowCount="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Community"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:textSize="12dp"
+            android:layout_marginRight="30dp"
+            android:layout_gravity="center"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <Button
+            android:id="@+id/btn_top2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voice"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:textSize="12dp"
+            android:columnCount="1"
+            android:rowCount="0"
+            android:layout_gravity="center"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <Button
+            android:id="@+id/btn_top3"
+            android:columnCount="0"
+            android:rowCount="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Script"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:textSize="12dp"
+            android:layout_gravity="center"
+            style="?android:attr/borderlessButtonStyle"/>
+    </GridLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        android:background="#E9E9E9">
+    </android.support.v7.widget.RecyclerView>
+
+
+</LinearLayout>
