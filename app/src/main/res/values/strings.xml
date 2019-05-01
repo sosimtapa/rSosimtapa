@@ -30,5 +30,6 @@
     <string name="script5_3">총 금액이 얼마인가요? 카드 결제되나요?</string>
     <string name="script5_4">잠시만요, 지금 나가요! 조금만 기다려주세요.</string>
     <string name="script5_5">문 앞에 두고 가주세요.</string>
+    <string name="title_activity_my_place">MyPlace</string>
 </resources>
 

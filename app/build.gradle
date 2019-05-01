@@ -37,6 +37,13 @@ dependencies {
 
     //Sign-Up 추가
     implementation 'com.google.firebase:firebase-core:16.0.1'
+
+    //google map api
+    implementation 'com.google.android.gms:play-services-maps:15.0.1'
+    implementation 'com.google.android.gms:play-services-location:15.0.1'
+    //현재위치접근
+    implementation 'com.android.support:design:27.0.0'
+
 }
 
 apply plugin: 'com.google.gms.google-services'

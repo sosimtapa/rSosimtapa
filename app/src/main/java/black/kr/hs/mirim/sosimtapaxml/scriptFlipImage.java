@@ -40,6 +40,14 @@ public class scriptFlipImage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 switch (v.getId()){
+                    case R.id.btn_top1:
+                        Intent intent7 = new Intent(getApplicationContext(),MainActivity1.class);
+                        startActivity(intent7);
+                        break;
+                    case R.id.btn_top2:
+                        Intent intent8= new Intent(getApplicationContext(),Main3Audio.class);
+                        startActivity(intent8);
+                        break;
                     case R.id.deliBtn:
                         Intent intent1 = new Intent(getApplicationContext(),scriptPic1.class);
                         startActivity(intent1);
