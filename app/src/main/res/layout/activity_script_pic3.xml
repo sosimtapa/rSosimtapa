@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayoutt xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,15 +15,30 @@
         android:layout_width="match_parent"
         android:layout_height="400dp" />
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="6"
-        android:text=" - 저기요, 여기 머리카락이 들어있는데 새로 만든 거로 바꿔주실 수 있나요?
- - 냅킨(물수건)이 부족한데 채워주실 수 있을까요?
- - 오늘 O시에 OOO으로 O명 예약했는데 자리가 어디인가요?"
-        android:textColor="#000000"
-        android:textSize="20dp" />
+        android:layout_height="match_parent">
+        <ImageButton
+            android:id="@+id/prev3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp" />
 
-</LinearLayoutt>
+        <TextView
+            android:id="@+id/textViewScript"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textSize="20dp"/>
+
+        <ImageButton
+            android:id="@+id/next3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
+    </LinearLayout>
+
+</LinearLayout>

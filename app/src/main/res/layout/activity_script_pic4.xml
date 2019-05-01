@@ -15,16 +15,29 @@
         android:layout_width="match_parent"
         android:layout_height="400dp" />
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="6"
-        android:text=" - 죄송하지만, 제가 정말 급한 일이 있어서 비켜주실 수 있나요?
- - 제가 이쪽 동네는 처음이라서 길을 잘 모르는데 OOO으로 가려
-면 어디로 가야 하나요?
- - 저도 잘 몰라서 알려드릴 수가 없네요.. 도움 못 드려서 죄송합니다.
-"
-        android:textColor="#000000"
-        android:textSize="20dp" />
+        android:layout_height="match_parent">
+        <ImageButton
+            android:id="@+id/prev4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp" />
+
+        <TextView
+            android:id="@+id/textViewScript"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textSize="20dp"/>
+
+        <ImageButton
+            android:id="@+id/next4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
+    </LinearLayout>
 </LinearLayout>
