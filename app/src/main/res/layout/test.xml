@@ -37,12 +37,18 @@
         android:elevation="8dp"
         android:orientation="vertical">
 
+        <CheckBox
+            android:id="@+id/checkBox5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="5. 미용실에서 머리가 마음에 안 들어도 '감사합니다'라고 말한 적 있다."
+            android:layout_marginBottom="20dp"/>
 
         <CheckBox
             android:id="@+id/checkBox6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
             android:layout_marginBottom="20dp"
             android:text="6. 버스기사의 실수로 내려야 할 정류장을 지나쳤지만 말 못한 적있다." />
 
