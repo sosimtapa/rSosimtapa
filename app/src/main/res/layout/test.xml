@@ -9,7 +9,7 @@
         android:layout_height="150dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:src="@drawable/rcat" />
+        android:src="@drawable/logo" />
 
     <TextView
         android:id="@+id/textView1"
@@ -78,14 +78,6 @@
         android:layout_marginBottom="20dp"
         android:layout_gravity="center"/>-->
 
-    <!--<TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="선택결과창"
-        android:paddingLeft="10dp"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
--->
     <Button
         android:id="@+id/btn_testFinish"
         android:layout_width="match_parent"
@@ -94,7 +86,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/btn_radius"
         android:backgroundTint="#ffffff"
-        android:text="Finish"
+        android:text="결과 보기"
         android:textColor="#FF6D70"
         android:textSize="20dp"
         android:textStyle="bold" />
