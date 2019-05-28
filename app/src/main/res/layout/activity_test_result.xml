@@ -9,11 +9,38 @@
     android:id="@+id/testResult"
     tools:context=".testResult">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="소심타파"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/colorAccent"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="설문에 응해주셔서 감사합니다"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="당신의 소심도 테스트 결과"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
     <TextView
         android:id="@+id/testCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="8개중 선택한 문항은 "
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+
+
+    </LinearLayout>
 </LinearLayout>

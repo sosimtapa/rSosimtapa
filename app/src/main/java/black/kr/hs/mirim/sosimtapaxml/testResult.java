@@ -3,6 +3,7 @@ package black.kr.hs.mirim.sosimtapaxml;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +15,7 @@ import org.w3c.dom.Text;
 
 public class testResult extends AppCompatActivity {
 
-    int count=0;
+    String TGrade = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,30 +25,20 @@ public class testResult extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.testCount);
         Button b = (Button)findViewById(R.id.btn_testFinish) ;
 
-        final CheckBox cb1 = (CheckBox)findViewById(R.id.checkBox1);
-        final CheckBox cb2 = (CheckBox)findViewById(R.id.checkBox2);
-        final CheckBox cb3 = (CheckBox)findViewById(R.id.checkBox3);
-        final CheckBox cb4 = (CheckBox)findViewById(R.id.checkBox4);
-        final CheckBox cb5 = (CheckBox)findViewById(R.id.checkBox5);
-        final CheckBox cb6 = (CheckBox)findViewById(R.id.checkBox6);
-        final CheckBox cb7 = (CheckBox)findViewById(R.id.checkBox7);
-        final CheckBox cb8 = (CheckBox)findViewById(R.id.checkBox8);
+        Intent testHap = getIntent();
+        final int count = testHap.getIntExtra("hap",0);
 
-        b.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(cb1.isChecked() == true) count +=1;
-                if(cb2.isChecked() == true) count +=1;
-                if(cb3.isChecked() == true) count +=1;
-                if(cb4.isChecked() == true) count +=1;
-                if(cb5.isChecked() == true) count +=1;
-                if(cb6.isChecked()== true) count +=1;
-                if(cb7.isChecked()==true) count +=1;
-                if(cb8.isChecked()==true) count +=1;
-            }
-        });
+        if(count<3){
+            TGrade = "고양이";
+        }else if(count < 5){
+            TGrade = "사슴";
+        }else if(count <7){
+            TGrade = "토끼";
+        }else if (count < 9){
+            TGrade = "다람쥐";
+        }
 
-        textView.setText(count);
+        textView.setText(TGrade + "입니다");
 
         LinearLayout first = (LinearLayout)findViewById(R.id.testResult);
         first.setOnTouchListener(new View.OnTouchListener() {
@@ -55,7 +46,6 @@ public class testResult extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity1.class);
                 startActivity(intent);
-
                 return true;
             }
         });
