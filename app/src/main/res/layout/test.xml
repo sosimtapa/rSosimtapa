@@ -9,7 +9,7 @@
         android:layout_height="150dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:src="@drawable/rcat" />
+        android:src="@drawable/logo" />
 
     <TextView
         android:id="@+id/textView1"
@@ -32,7 +32,6 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginTop="25dp"
-        android:layout_weight="2"
         android:background="@drawable/radius"
         android:elevation="8dp"
         android:orientation="vertical">
@@ -68,34 +67,18 @@
 
     </LinearLayout>
 
-<!--    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="선택완료"
-        android:backgroundTint="#FF6D70"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="center"/>-->
 
-    <!--<TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="선택결과창"
-        android:paddingLeft="10dp"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
--->
     <Button
         android:id="@+id/btn_testFinish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/btn_radius"
         android:backgroundTint="#ffffff"
-        android:text="Finish"
+        android:text="결과 보기"
         android:textColor="#FF6D70"
         android:textSize="20dp"
         android:textStyle="bold" />
+
 </LinearLayout>

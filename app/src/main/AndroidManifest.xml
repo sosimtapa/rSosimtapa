@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="black.kr.hs.mirim.sosimtapaxml">
-
-    <!--위치 정보 접근 허용 -->
+    <!-- 위치 정보 접근 허용 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -13,12 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".testResult"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBggq7qP3BvEV5C0aKMqT27IaL9j1hnRIM"/>
+            android:value="AIzaSyBggq7qP3BvEV5C0aKMqT27IaL9j1hnRIM" />
 
-        <activity android:name=".MyPlaceWrite"></activity>
+        <activity android:name=".MyPlaceWrite" />
         <activity
             android:name=".MyPlace"
             android:label="M Y P L A C E"
