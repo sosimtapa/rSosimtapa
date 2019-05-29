@@ -18,7 +18,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_weight="6"
         android:text=" - OO동 OO아파트 123동 101호인데요.
  - 엽기떡볶이 착한맛 1개로 갖다 주세요.

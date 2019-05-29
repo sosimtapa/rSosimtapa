@@ -48,6 +48,7 @@
         <activity android:name=".TestActivity" />
         <activity android:name=".testStart" />
         <activity android:name=".testMid" />
+        <activity android:name=".VoiceActivity" />
     </application>
 
 </manifest>
