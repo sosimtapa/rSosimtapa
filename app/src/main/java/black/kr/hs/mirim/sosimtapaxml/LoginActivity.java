@@ -76,6 +76,10 @@ public class LoginActivity extends AppCompatActivity {
                         //테스트화면에서 출력하도록 바꾸기
                         Toast.makeText(LoginActivity.this, "로그인 성공" + document.getString("userID") + "님 환영합니다.", Toast.LENGTH_SHORT).show();
 
+                        Intent sendID = new Intent(getApplicationContext(),testStart.class);
+                        sendID.putExtra("userID",id.getText().toString());
+                        startActivity(sendID);
+
                         Intent intent = new Intent(getApplicationContext(), testStart.class);
                         startActivity(intent);
 

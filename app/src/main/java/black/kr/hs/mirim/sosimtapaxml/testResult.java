@@ -15,6 +15,7 @@ import org.w3c.dom.Text;
 
 public class testResult extends AppCompatActivity {
 
+    String userID = "";
     String TGrade = "";
 
     @Override
@@ -28,6 +29,10 @@ public class testResult extends AppCompatActivity {
         Intent testHap = getIntent();
         final int count = testHap.getIntExtra("hap",0);
 
+    /*  Intent intent = getIntent();
+      userID = intent.getStringExtra("userID");
+      Log.d("userIDValue",userID);*/
+
         if(count<3){
             TGrade = "고양이";
         }else if(count < 5){
@@ -39,6 +44,16 @@ public class testResult extends AppCompatActivity {
         }
 
         textView.setText(TGrade + "입니다");
+
+        //등급에따라 다른 기능 번튼 보여주기
+        if(TGrade.equals("고양이") || TGrade.equals("사슴")){
+
+
+
+        }else{
+
+        }
+
 
         LinearLayout first = (LinearLayout)findViewById(R.id.testResult);
         first.setOnTouchListener(new View.OnTouchListener() {
