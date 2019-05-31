@@ -33,6 +33,7 @@ public class Main3Audio extends AppCompatActivity {
     Button main1_community;
     Button main2_audio;
     Button main3_script;
+    Button speak_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,7 @@ public class Main3Audio extends AppCompatActivity {
         main1_community=findViewById(R.id.btn_top1);
         main2_audio=findViewById(R.id.btn_top2);
         main3_script=findViewById(R.id.btn_top3);
+        speak_btn = findViewById(R.id.speakPrac_btn);
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
@@ -60,9 +62,22 @@ public class Main3Audio extends AppCompatActivity {
                         Intent intent3= new Intent(getApplicationContext(),scriptFlipImage.class);
                         startActivity(intent3);
                         break;
+
                 }
             }
         };
+
+        //tts
+               //tts 말하기 연습하기 버튼
+
+        speak_btn.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), VoiceActivity.class);
+                startActivity(intent);
+            }
+
+        });
 
         main1_community.setOnClickListener(listener);
         main3_script.setOnClickListener(listener);

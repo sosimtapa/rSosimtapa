@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".VoiceActivity">
+
+
+    <EditText
+        android:id="@+id/edit_readText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="읽을 문장을 입력해주세요."
+        android:textSize="20dp" />
+
+
+    <Button
+        android:id="@+id/btn_speech"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="말하기"
+        android:textSize="20dp" />
+    <Button
+        android:id="@+id/tone_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="음올림"
+        android:textSize="20dp"/>
+    <Button
+        android:id="@+id/tone_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="음내림"
+        android:textSize="20dp"/>
+
+
+</LinearLayout>

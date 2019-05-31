@@ -47,15 +47,25 @@ public class testResult extends AppCompatActivity {
 
         //등급에따라 다른 기능 번튼 보여주기
         if(TGrade.equals("고양이") || TGrade.equals("사슴")){
-
-
+            Log.d("trade1",TGrade);
+            LinearLayout ll = new LinearLayout(this);
+            Button tv = new Button(this);
+            tv.setText("Hello World");
+            ll.addView(tv);
+            setContentView(ll);
 
         }else{
+            Log.d("trade2",TGrade);
+
+            LinearLayout ll = new LinearLayout(this);
+           Button tv = new Button(this);
+            tv.setText("Hello World");
+            ll.addView(tv);
+            setContentView(ll);
 
         }
 
-
-        LinearLayout first = (LinearLayout)findViewById(R.id.testResult);
+    /*    LinearLayout first = (LinearLayout)findViewById(R.id.testResult);
         first.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -64,6 +74,22 @@ public class testResult extends AppCompatActivity {
                 return true;
             }
         });
+*/
+    }
 
+    class BtnOnClickListener implements Button.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(getApplicationContext(), Main3Audio.class);
+            startActivity(intent);
+        }
+    }
+
+    class BtnOnClickListener2 implements Button.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(getApplicationContext(), scriptFlipImage.class);
+            startActivity(intent);
+        }
     }
 }
