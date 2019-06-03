@@ -1,6 +1,7 @@
 package black.kr.hs.mirim.sosimtapaxml;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,11 +12,23 @@ import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.internal.api.FirebaseNoSignedInUserException;
+
 import org.w3c.dom.Text;
+
+import java.util.Map;
 
 public class testResult extends AppCompatActivity {
 
     String TGrade = "";
+    String NID;
+
+    FirebaseFirestore gradeDb = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +38,8 @@ public class testResult extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.testCount);
         Button b = (Button)findViewById(R.id.btn_testFinish) ;
 
-        Intent testHap = getIntent();
-        final int count = testHap.getIntExtra("hap",0);
+        Intent intent = getIntent();
+        final int count = intent.getIntExtra("hap",0);
 
         if(count<3){
             TGrade = "고양이";
@@ -49,6 +62,8 @@ public class testResult extends AppCompatActivity {
                 return true;
             }
         });
+
+
 
     }
 }

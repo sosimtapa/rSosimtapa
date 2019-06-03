@@ -22,6 +22,7 @@ public class testMid extends AppCompatActivity {
         final CheckBox cb3 = findViewById(R.id.checkBox3);
         final CheckBox cb4 = findViewById(R.id.checkBox4);
 
+
         t2.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,8 +39,7 @@ public class testMid extends AppCompatActivity {
                     sum+=1;
                 }
                 Intent intent = new Intent(getApplicationContext(), TestActivity.class);
-                intent.putExtra("hap",sum);
-                startActivityForResult(intent,0);
+                startActivity(intent);
             }
         });
     }

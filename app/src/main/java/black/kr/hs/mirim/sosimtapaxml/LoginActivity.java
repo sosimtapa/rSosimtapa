@@ -78,9 +78,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(getApplicationContext(), testStart.class);
                         startActivity(intent);
-
                     }
-
                 } else {
                     Toast.makeText(LoginActivity.this, "로그인 실패" + task.getException(), Toast.LENGTH_SHORT).show(); // 왜 안뜨는 지 모름
                 }

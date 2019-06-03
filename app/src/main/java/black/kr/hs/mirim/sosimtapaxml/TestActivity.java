@@ -52,7 +52,7 @@ public class TestActivity extends AppCompatActivity {
                 }
                 Intent intent = new Intent(getApplicationContext(), testResult.class);
                 intent.putExtra("hap",count);
-                startActivityForResult(intent,0);
+                startActivity(intent);
             }
         });
 

@@ -72,6 +72,9 @@ public class MyPlaceWrite extends AppCompatActivity implements OnMapReadyCallbac
                 startActivityForResult(intent, 1);
             }
         });
+
+
+
     }
 
     @Override       //이미지
