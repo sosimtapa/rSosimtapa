@@ -38,7 +38,7 @@ public class VoiceActivity extends AppCompatActivity implements View.OnClickList
     private TextToSpeech tts;
     private FirebaseFirestore userDB;
     private EditText chat_bubble;
-    private String signUpID;
+    private String userID;
 
     ////
     @Override
@@ -173,14 +173,14 @@ public class VoiceActivity extends AppCompatActivity implements View.OnClickList
     //파이어베이스에 대본 추가하는 메소드 추가
     public void scriptAdd() {
         Intent intent = getIntent();
-        signUpID = intent.getStringExtra("signUpID");
+        userID = intent.getStringExtra("userID");
 
         userDB = FirebaseFirestore.getInstance();
         chat_bubble = findViewById(R.id.script_Text);
 
         Map<String,Object> post = new HashMap<>();
 
-        post.put("writer", signUpID);
+        post.put("writer", userID);
         post.put("content",chat_bubble.getText().toString());
 
         userDB.collection("script").document()

@@ -51,11 +51,11 @@ public class MainActivity1 extends AppCompatActivity
     private RecyclerView recyclerView;
     private List<Board> mBoardList;
     private MainAdapter mAdapter;
-    private String signUpID;
 
     Button main1_community;
     Button main2_audio;
     Button main3_script;
+    String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +71,9 @@ public class MainActivity1 extends AppCompatActivity
         main2_audio=findViewById(R.id.btn_top2);
         main3_script=findViewById(R.id.btn_top3);
 
+        Intent gi = getIntent();
+        userID = gi.getStringExtra("userID");
+
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,10 +85,10 @@ public class MainActivity1 extends AppCompatActivity
                     case R.id.btn_top2:
 
                         Intent intent = getIntent();
-                        signUpID = intent.getStringExtra("signUpID");
+                        userID = intent.getStringExtra("userID");
 
                         Intent intent2= new Intent(getApplicationContext(),Main3Audio.class);
-                        intent2.putExtra("signUpID", signUpID);
+                        intent2.putExtra("userID", userID);
 
                         startActivity(intent2);
                         break;
@@ -251,7 +254,7 @@ public class MainActivity1 extends AppCompatActivity
 
         if (id == R.id.my_place) {
             Intent intent_m = new Intent(getApplicationContext(),MyPlace.class);
-
+            intent_m.putExtra("usrID",userID);
             startActivity(intent_m);
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {

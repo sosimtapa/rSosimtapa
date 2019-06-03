@@ -29,7 +29,7 @@ public class Main3Audio extends AppCompatActivity {
     private ArrayList<Music> arrayList;
     private CustomMusicAdapter adapter;
     private ListView songList;
-    private String signUpID;
+    private String userID;
 
     Button main1_community;
     Button main2_audio;
@@ -76,10 +76,10 @@ public class Main3Audio extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = getIntent();
-                signUpID = intent.getStringExtra("signUpID");
+                userID = intent.getStringExtra("userID");
 
                 intent = new Intent(getApplicationContext(), VoiceActivity.class);
-                intent.putExtra("signUpID", signUpID);
+                intent.putExtra("userID", userID);
                 startActivity(intent);
             }
 

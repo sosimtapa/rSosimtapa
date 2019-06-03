@@ -27,12 +27,12 @@
         android:id="@+id/script_writer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="10dp"
+        android:textSize="15dp"
         android:text="writer"
         android:layout_alignBottom="@id/script_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"/>
 
     </RelativeLayout>

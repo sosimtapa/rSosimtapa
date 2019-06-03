@@ -6,9 +6,11 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,12 +33,13 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText id;
     private EditText pw;
-    private String signUpID;
+    boolean secondLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
         //회원가입으로 이동하는 버튼
         TextView signupButton = (TextView) findViewById(R.id.signupButton);
@@ -62,10 +65,12 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loginCheck() {
 
+        secondLogin = false;
         id = findViewById(R.id.idText);
         pw = findViewById(R.id.passwordText);
 
         FirebaseFirestore userDB = FirebaseFirestore.getInstance();
+        final FirebaseFirestore fb = FirebaseFirestore.getInstance();
 
         userDB.collection("signUp")
                 .whereEqualTo("userID", id.getText().toString()).whereEqualTo("userPW", pw.getText().toString())
@@ -77,14 +82,30 @@ public class LoginActivity extends AppCompatActivity {
                         //테스트화면에서 출력하도록 바꾸기
                         Toast.makeText(LoginActivity.this, document.getString("userID") + "님 환영합니다.", Toast.LENGTH_SHORT).show();
 
-                        signUpID = document.getString("signUpID");
-
-                        Intent intent = new Intent(getApplicationContext(), testStart.class);
-                        intent.putExtra("signUpID",signUpID);
-                        startActivity(intent);
-
+                        fb.collection("personalInfo")
+                                .whereEqualTo("userID", document.getString("userID"))
+                                .get()
+                                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                        if (task.isSuccessful()) {
+                                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                                Intent intent = new Intent(getApplicationContext(), MainActivity1.class);
+                                                intent.putExtra("userID",id.getText().toString());
+                                                startActivity(intent);
+                                            }
+                                            secondLogin=true;
+                                        } else {
+                                            Log.w("else문","들으옴");
+                                        }
+                                    }
+                                });
+                        if(secondLogin==false){         //소심도 테스트 결과가 db에 없을 경우
+                            Intent intent = new Intent(getApplicationContext(), testStart.class);
+                            intent.putExtra("userID",id.getText().toString());
+                            startActivity(intent);
+                        }
                     }
-
                 } else {
                     Toast.makeText(LoginActivity.this, "로그인 실패" + task.getException(), Toast.LENGTH_SHORT).show(); // 왜 안뜨는 지 모름
                 }

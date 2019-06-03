@@ -31,8 +31,9 @@ public class TestActivity extends AppCompatActivity {
 
         Button b = (Button)findViewById(R.id.btn_testFinish);
 
-        Intent getSumIntent = getIntent();
-        count = getSumIntent.getIntExtra("hap",0);
+        Intent gi = getIntent();
+        count = gi.getIntExtra("hap",0);
+        final String userID = gi.getStringExtra("userID");
 
         final CheckBox cb5 = (CheckBox)findViewById(R.id.checkBox5);
         final CheckBox cb6 = (CheckBox)findViewById(R.id.checkBox6);
@@ -56,7 +57,7 @@ public class TestActivity extends AppCompatActivity {
                 }
                 Intent intent = new Intent(getApplicationContext(), testResult.class);
                 intent.putExtra("hap",count);
-                intent.putExtra("signUpID", signUpID);
+                intent.putExtra("userID",userID);
                 startActivityForResult(intent,0);
             }
         });

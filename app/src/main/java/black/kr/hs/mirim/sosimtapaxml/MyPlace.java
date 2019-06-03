@@ -18,13 +18,15 @@ public class MyPlace extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.edit_place);
+        Intent it = getIntent();
+        final String userID = it.getStringExtra("userID");
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent = new Intent(MyPlace.this, MyPlaceWrite.class);
+                intent.putExtra("userID",userID);
                 startActivity(intent);
-
                 /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
             }

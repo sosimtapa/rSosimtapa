@@ -4,10 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -15,15 +12,9 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -50,7 +41,7 @@ public class SignupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
-//
+
         userDB = FirebaseFirestore.getInstance();
 
         id = findViewById(R.id.idText);
@@ -59,8 +50,6 @@ public class SignupActivity extends AppCompatActivity {
 
         genderRG = findViewById(R.id.genderGroup);
         spinner = (Spinner) findViewById(R.id.hobbySpinner);
-      //  adapter = ArrayAdapter.createFromResource(this, R.array.hobby, android.R.layout.);
-      //  spinner.setAdapter(adapter);
 
         hobby = spinner.getSelectedItem().toString();
 
@@ -86,7 +75,6 @@ public class SignupActivity extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-
                                 Toast.makeText(SignupActivity.this,"회원가입 성공!",Toast.LENGTH_SHORT).show();
                                 finish();
                             }
