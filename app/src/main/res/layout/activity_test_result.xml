@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="50dp"
     android:id="@+id/testResult"
     tools:context=".testResult">
 
@@ -13,34 +12,79 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold">
+        android:layout_margin="15dp"  >
 
     <TextView
+        android:id="@+id/test_userId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="소심타파"
         android:layout_marginBottom="20dp"
         android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="true"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-    <TextView
+
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="설문에 응해주셔서 감사합니다"
+        android:text="= 테스트 완료 = "
+        android:textColor="#848484"
+        android:textSize="17dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="당신의 소심도 테스트 결과"
+            android:text="설문에 응해주셔서 감사합니다"
+            android:textColor="#848484"
+            android:textSize="15dp"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="소심도 테스트 결과 다람쥐, 사슴, 토끼, 고양이 중"
+            android:textColor="#848484"
+            android:layout_marginTop="15dp"
+            android:textSize="15dp"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/testCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="17dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+        <ImageView
+            android:src="@drawable/animalgrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아래 버튼을 누르면 테스트결과에 따른 맞춤 서비스가 대기 중입니다. 화면을 터치할 경우 메인 화면으로 넘어갑니다."
+            android:textColor="#848484"
+            android:layout_marginTop="25dp"
+            android:textSize="12dp"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_matchFuc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_radius"
+        android:backgroundTint="#ffffff"
+        android:text="나에게 맞는 맞춤 서비스"
+        android:textColor="#FF6D70"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"/>
 </LinearLayout>

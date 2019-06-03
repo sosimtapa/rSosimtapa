@@ -1,13 +1,14 @@
 package black.kr.hs.mirim.sosimtapaxml;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class first extends AppCompatActivity {
 
@@ -15,6 +16,15 @@ public class first extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
+
+        TextView myText =  findViewById(R.id.pleaseTouch );
+
+        Animation anim = new AlphaAnimation(0.0f, 1.0f);
+        anim.setDuration(300); //You can manage the time of the blink with this parameter
+        anim.setStartOffset(20);
+        anim.setRepeatMode(Animation.REVERSE);
+        anim.setRepeatCount(Animation.INFINITE);
+        myText.startAnimation(anim);
 
         LinearLayout first = (LinearLayout)findViewById(R.id.first_ll);
         first.setOnTouchListener(new View.OnTouchListener() {

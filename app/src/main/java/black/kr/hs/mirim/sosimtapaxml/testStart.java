@@ -16,10 +16,14 @@ public class testStart extends AppCompatActivity {
 
         Button t1 = (Button) findViewById(R.id.btn_testStart);
 
+        Intent gi = getIntent();
+        final String userID = gi.getStringExtra("userID");
+
         t1.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), testMid.class);
+                intent.putExtra("userID",userID);
                 startActivity(intent);
             }
         });

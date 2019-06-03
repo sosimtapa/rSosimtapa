@@ -48,7 +48,6 @@ public class SignupActivity extends AppCompatActivity {
     private String totCnt;
 
     public String getTotCnt() {
-
         return totCnt;
     }
 
@@ -62,7 +61,6 @@ public class SignupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
-//
         userDB = FirebaseFirestore.getInstance();
 
         id = findViewById(R.id.idText);
@@ -118,7 +116,6 @@ public class SignupActivity extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-
                                 Toast.makeText(SignupActivity.this,"회원가입 성공!",Toast.LENGTH_SHORT).show();
                                 finish();
                             }
