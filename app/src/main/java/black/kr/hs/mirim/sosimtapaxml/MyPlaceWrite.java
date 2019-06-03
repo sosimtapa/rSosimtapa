@@ -54,9 +54,6 @@ public class MyPlaceWrite extends AppCompatActivity implements OnMapReadyCallbac
     //위치
     String address;
 
-    Intent it = getIntent();
-    final String userID = it.getStringExtra("userID");
-
     public static MyPlaceWrite newInstance() {
         MyPlaceWrite fragment = new MyPlaceWrite();
         return fragment;
@@ -76,6 +73,9 @@ public class MyPlaceWrite extends AppCompatActivity implements OnMapReadyCallbac
 
        // mStorageRef = FirebaseStorage.getInstance().getReference();
         ff = FirebaseFirestore.getInstance();
+
+        Intent it = getIntent();
+        final String userID = it.getStringExtra("userID");
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()

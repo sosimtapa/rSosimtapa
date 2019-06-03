@@ -44,7 +44,7 @@ public class testMid extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), TestActivity.class);
                 intent.putExtra("hap",sum);
                 intent.putExtra("userID",userID);
-                startActivityForResult(intent,0);
+                startActivity(intent);
             }
         });
     }
