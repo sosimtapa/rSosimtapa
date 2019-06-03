@@ -6,8 +6,22 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MyPlace"
+    android:orientation="vertical"
     tools:showIn="@layout/activity_my_place">
 
+    <TextView
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:text="나만의 FAVORITE 장소"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"/>
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/placeRecycle"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

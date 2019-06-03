@@ -101,7 +101,6 @@ public class testResult extends AppCompatActivity {
     });
 }
     public void GradeDB(){
-
         Map<String, Object> grade = new HashMap<>();
         grade.put("userID", userID);
         grade.put("TGrade", TGrade);

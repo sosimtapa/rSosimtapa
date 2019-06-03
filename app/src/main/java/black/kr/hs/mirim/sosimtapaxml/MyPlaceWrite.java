@@ -5,10 +5,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.location.Address;
 import android.location.Geocoder;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +18,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -26,26 +27,35 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MyPlaceWrite extends AppCompatActivity implements OnMapReadyCallback, ActivityCompat.OnRequestPermissionsResultCallback {
 
     private GoogleMap mMap;
     private Geocoder geocoder;
     private Button button;
+    private Button writeAll;
     private EditText editText;
-    //FirebaseFirestore ff;
+    FirebaseFirestore ff;
     //private StorageReference mStorageRef;
 
     //이미지 띄우기
     ImageView imageView;
     Button img_button;
+
+    //위치
+    String address;
+
+    Intent it = getIntent();
+    final String userID = it.getStringExtra("userID");
 
     public static MyPlaceWrite newInstance() {
         MyPlaceWrite fragment = new MyPlaceWrite();
@@ -59,12 +69,13 @@ public class MyPlaceWrite extends AppCompatActivity implements OnMapReadyCallbac
 
         editText = (EditText) findViewById(R.id.placewrite_editText);
         button=(Button)findViewById(R.id.placewrite_button);
+        writeAll = findViewById(R.id.placeWriteAll);
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);         // 키보드 생성시 UI도 같이 올라가게
-     //   FirebaseStorage storage = FirebaseStorage.getInstance("gs://sosimtapaxml.appspot.com/");
+       // FirebaseStorage storage = FirebaseStorage.getInstance("gs://sosimtapaxml.appspot.com/");
 
        // mStorageRef = FirebaseStorage.getInstance().getReference();
-        //ff = FirebaseFirestore.getInstance();
+        ff = FirebaseFirestore.getInstance();
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -86,6 +97,31 @@ public class MyPlaceWrite extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
+        final EditText content = findViewById(R.id.write_contents_text);                //내용
+        writeAll.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Map<String, Object> grade = new HashMap<>();
+                grade.put("userID", userID);
+                grade.put("address", address);        // 장소
+                grade.put("content",content.toString());         // 내용
+
+                ff.collection("myplace").document()
+                        .set(grade)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d("장소저장", "DocumentSnapshot successfully written!");
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.d("장소저장실패", "Error writing document", e);
+                            }
+                        });
+            }
+        });
 
 
     }
@@ -132,6 +168,7 @@ public class MyPlaceWrite extends AppCompatActivity implements OnMapReadyCallbac
                 googleMap.addMarker(mOptions);
             }
         });
+
         // 버튼 이벤트
         button.setOnClickListener(new Button.OnClickListener(){
             @Override
@@ -151,7 +188,7 @@ public class MyPlaceWrite extends AppCompatActivity implements OnMapReadyCallbac
                 System.out.println(addressList.get(0).toString());
                 // 콤마를 기준으로 split
                 String []splitStr = addressList.get(0).toString().split(",");
-                String address = splitStr[0].substring(splitStr[0].indexOf("\"") + 1,splitStr[0].length() - 2); // 주소
+                address = splitStr[0].substring(splitStr[0].indexOf("\"") + 1,splitStr[0].length() - 2); // 주소
                 System.out.println(address);
 
                 String latitude = splitStr[10].substring(splitStr[10].indexOf("=") + 1); // 위도
