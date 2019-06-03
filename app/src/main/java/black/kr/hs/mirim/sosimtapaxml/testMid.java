@@ -22,6 +22,11 @@ public class testMid extends AppCompatActivity {
         final CheckBox cb3 = findViewById(R.id.checkBox3);
         final CheckBox cb4 = findViewById(R.id.checkBox4);
 
+<<<<<<< HEAD
+=======
+        Intent gi = getIntent();
+        final String userID = gi.getStringExtra("userID");
+>>>>>>> 8561bce61fea1f950d253cd5d13c0a69de41a1f6
 
         t2.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -39,7 +44,13 @@ public class testMid extends AppCompatActivity {
                     sum+=1;
                 }
                 Intent intent = new Intent(getApplicationContext(), TestActivity.class);
+<<<<<<< HEAD
                 startActivity(intent);
+=======
+                intent.putExtra("hap",sum);
+                intent.putExtra("userID",userID);
+                startActivityForResult(intent,0);
+>>>>>>> 8561bce61fea1f950d253cd5d13c0a69de41a1f6
             }
         });
     }

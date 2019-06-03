@@ -48,7 +48,6 @@ public class SignupActivity extends AppCompatActivity {
     private String totCnt;
 
     public String getTotCnt() {
-
         return totCnt;
     }
 
@@ -118,7 +117,6 @@ public class SignupActivity extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-
                                 Toast.makeText(SignupActivity.this,"회원가입 성공!",Toast.LENGTH_SHORT).show();
                                 finish();
                             }
