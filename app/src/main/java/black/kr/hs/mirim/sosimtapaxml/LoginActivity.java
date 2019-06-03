@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText id;
     private EditText pw;
+    private String signUpID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,9 +75,12 @@ public class LoginActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         //테스트화면에서 출력하도록 바꾸기
-                        Toast.makeText(LoginActivity.this, "로그인 성공" + document.getString("userID") + "님 환영합니다.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, document.getString("userID") + "님 환영합니다.", Toast.LENGTH_SHORT).show();
+
+                        signUpID = document.getString("signUpID");
 
                         Intent intent = new Intent(getApplicationContext(), testStart.class);
+                        intent.putExtra("signUpID",signUpID);
                         startActivity(intent);
 
                     }

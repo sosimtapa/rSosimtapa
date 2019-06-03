@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,7 +34,7 @@ import java.util.Map;
 
 public class SignupActivity extends AppCompatActivity {
 
-    private ArrayAdapter adapter;
+   // private ArrayAdapter adapter;
     private Spinner spinner;
     private FirebaseFirestore userDB;
 
@@ -44,19 +45,6 @@ public class SignupActivity extends AppCompatActivity {
     private RadioButton genderRB;
     private String hobby;
     private String signUpId;
-    private int count;
-    private String totCnt;
-
-    public String getTotCnt() {
-
-        return totCnt;
-    }
-
-    public void setTotCnt(String totCnt) {
-
-        this.totCnt = totCnt;
-        Toast.makeText(SignupActivity.this,"Count : "+ totCnt,Toast.LENGTH_SHORT).show();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,8 +59,8 @@ public class SignupActivity extends AppCompatActivity {
 
         genderRG = findViewById(R.id.genderGroup);
         spinner = (Spinner) findViewById(R.id.hobbySpinner);
-        adapter = ArrayAdapter.createFromResource(this, R.array.hobby, android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+      //  adapter = ArrayAdapter.createFromResource(this, R.array.hobby, android.R.layout.);
+      //  spinner.setAdapter(adapter);
 
         hobby = spinner.getSelectedItem().toString();
 
@@ -84,36 +72,16 @@ public class SignupActivity extends AppCompatActivity {
                 signUpId = userDB.collection("signUp").document().getId();
                 genderRB = (RadioButton)findViewById(genderRG.getCheckedRadioButtonId());
 
-//                userDB.collection("signUp")
-//                        .get()
-//                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//                            @Override
-//
-//                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                                if (task.isSuccessful()) {
-//                                    count = 0;
-//                                    for (DocumentSnapshot document : task.getResult()) {
-//                                        count++;
-//                                    }
-//                                    String tot = String.valueOf(count);
-//                                    setTotCnt(tot);
-//
-//                                } else {
-//                                    Toast.makeText(SignupActivity.this,"Error getting documents: "+ task.getException(),Toast.LENGTH_SHORT).show();
-//                                }
-//                            }
-//                        });
-
                 Map<String,Object> post = new HashMap<>();
 
-                post.put("signUpID",getTotCnt());
+                post.put("signUpID", signUpId);
                 post.put("userID",id.getText().toString());
                 post.put("userPW",pw.getText().toString());
                 post.put("userEmail",email.getText().toString());
                 post.put("userGender", genderRB.getText().toString());
                 post.put("userHobby",hobby);
 
-                userDB.collection("signUp").document()
+                userDB.collection("signUp").document(signUpId)
                         .set(post)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override

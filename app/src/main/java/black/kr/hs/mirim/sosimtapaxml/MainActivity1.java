@@ -51,6 +51,7 @@ public class MainActivity1 extends AppCompatActivity
     private RecyclerView recyclerView;
     private List<Board> mBoardList;
     private MainAdapter mAdapter;
+    private String signUpID;
 
     Button main1_community;
     Button main2_audio;
@@ -79,7 +80,13 @@ public class MainActivity1 extends AppCompatActivity
                         startActivity(intent1);
                         break;
                     case R.id.btn_top2:
+
+                        Intent intent = getIntent();
+                        signUpID = intent.getStringExtra("signUpID");
+
                         Intent intent2= new Intent(getApplicationContext(),Main3Audio.class);
+                        intent2.putExtra("signUpID", signUpID);
+
                         startActivity(intent2);
                         break;
                     case R.id.btn_top3:

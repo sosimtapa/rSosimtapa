@@ -16,11 +16,15 @@ import org.w3c.dom.Text;
 public class testResult extends AppCompatActivity {
 
     String TGrade = "";
+    private String signUpID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_result);
+
+        Intent intent = getIntent();
+        signUpID = intent.getStringExtra("signUpID");
 
         TextView textView = (TextView) findViewById(R.id.testCount);
         Button b = (Button)findViewById(R.id.btn_testFinish) ;
@@ -45,6 +49,7 @@ public class testResult extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity1.class);
+                intent.putExtra("signUpID", signUpID);
                 startActivity(intent);
                 return true;
             }

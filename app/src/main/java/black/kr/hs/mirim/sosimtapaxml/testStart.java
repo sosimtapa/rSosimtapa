@@ -7,11 +7,15 @@ import android.view.View;
 import android.widget.Button;
 
 public class testStart extends AppCompatActivity {
+    private String signUpID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_start);
+
+        Intent intent = getIntent();
+        signUpID = intent.getStringExtra("signUpID");
 
         Button t1 = (Button) findViewById(R.id.btn_testStart);
 
@@ -19,6 +23,7 @@ public class testStart extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), testMid.class);
+                intent.putExtra("signUpID", signUpID);
                 startActivity(intent);
             }
         });
