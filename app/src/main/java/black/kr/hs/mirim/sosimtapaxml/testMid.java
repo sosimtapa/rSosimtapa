@@ -41,6 +41,7 @@ public class testMid extends AppCompatActivity {
                 if(cb4.isChecked()){
                     sum+=1;
                 }
+
                 Intent intent = new Intent(getApplicationContext(), TestActivity.class);
                 intent.putExtra("hap",sum);
                 intent.putExtra("userID",userID);

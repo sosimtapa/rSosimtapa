@@ -150,11 +150,6 @@ public class MainActivity1 extends AppCompatActivity
 
     }
 
-/*    @Override
-    public void onClick(View v) {
-        startActivity(new Intent(this,Main1WriteActivity.class));
-    }*/
-
     private class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder>{
 
         private List<Board> mBoardList;
@@ -248,9 +243,8 @@ public class MainActivity1 extends AppCompatActivity
 
         if (id == R.id.my_place) {
             Intent intent_m = new Intent(getApplicationContext(),MyPlace.class);
-            intent_m.putExtra("usrID",userID);
+            intent_m.putExtra("userID",userID);
             startActivity(intent_m);
-            // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {

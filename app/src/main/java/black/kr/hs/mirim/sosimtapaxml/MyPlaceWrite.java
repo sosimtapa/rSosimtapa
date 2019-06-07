@@ -18,6 +18,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
+
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -104,7 +106,7 @@ public class MyPlaceWrite extends AppCompatActivity implements OnMapReadyCallbac
                 Map<String, Object> grade = new HashMap<>();
                 grade.put("userID", userID);
                 grade.put("address", address);        // 장소
-                grade.put("content",content.toString());         // 내용
+                grade.put("content",content.getText().toString());         // 내용
 
                 ff.collection("myplace").document()
                         .set(grade)
@@ -120,6 +122,9 @@ public class MyPlaceWrite extends AppCompatActivity implements OnMapReadyCallbac
                                 Log.d("장소저장실패", "Error writing document", e);
                             }
                         });
+                Toast.makeText(MyPlaceWrite.this,"등록완료",Toast.LENGTH_SHORT);
+                finish();
+
             }
         });
 
@@ -200,7 +205,7 @@ public class MyPlaceWrite extends AppCompatActivity implements OnMapReadyCallbac
                 LatLng point = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
                 // 마커 생성
                 MarkerOptions mOptions2 = new MarkerOptions();
-                mOptions2.title("검색 결과");
+                mOptions2.title(editText+"의 검색 결과");
                 mOptions2.snippet(address);
                 mOptions2.position(point);
                 // 마커 추가
