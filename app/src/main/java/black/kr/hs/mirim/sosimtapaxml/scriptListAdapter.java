@@ -9,7 +9,9 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class scriptListAdapter extends RecyclerView.Adapter<scriptListAdapter.ViewHolder> {
 
@@ -50,7 +52,16 @@ public class scriptListAdapter extends RecyclerView.Adapter<scriptListAdapter.Vi
 
             writerText = (TextView) mView.findViewById(R.id.script_writer);
             contentText = (TextView) mView.findViewById(R.id.script_content);
-            //12:11 생략함
         }
+
     }
+
+    public void updateList(List<Scripts> newList) {
+        scriptsList = new ArrayList<>();
+        scriptsList.addAll(newList);
+        notifyDataSetChanged();
+
+    }
+
+
 }

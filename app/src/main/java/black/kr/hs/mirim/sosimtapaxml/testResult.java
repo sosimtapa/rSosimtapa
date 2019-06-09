@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -33,6 +34,8 @@ public class testResult extends AppCompatActivity {
 
     String TGrade = "";
     String userID="";
+    String signUpID="";
+
     int count=0;
     FirebaseFirestore fb;
 
@@ -46,12 +49,12 @@ public class testResult extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.testCount);
         Button b = (Button)findViewById(R.id.btn_testFinish) ;
         Button matchF = findViewById(R.id.btn_matchFuc);
-        fb = FirebaseFirestore.getInstance();
+
 
         Intent gi = getIntent();
         count = gi.getIntExtra("hap",0);
         userID = gi.getStringExtra("userID");
-        Log.d("유저아이디",userID);
+        signUpID = gi.getStringExtra("signUpID");
 
         SpannableString content = new SpannableString(userID+"님");
         content.setSpan(new UnderlineSpan(), 0, content.length(),0);
@@ -101,25 +104,69 @@ public class testResult extends AppCompatActivity {
     });
 }
     public void GradeDB(){
-        Map<String, Object> grade = new HashMap<>();
+        final Map<String, Object> grade = new HashMap<>();
         grade.put("userID", userID);
         grade.put("TGrade", TGrade);
         grade.put("checkSu",count);
 
-        fb.collection("personalInfo").document()
-                .set(grade)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.d("데이터넣음", "DocumentSnapshot successfully written!");
+        fb = FirebaseFirestore.getInstance();
+
+        if(signUpID == null) {
+            fb.collection("signUp")
+                    .whereEqualTo("userID", userID)
+                    .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            //테스트화면에서 출력하도록 바꾸기
+                            String signUpID2 = document.getString("signUpID");
+
+                            fb.collection("personalInfo").document(signUpID2)
+                                    .set(grade)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Log.d("데이터넣음", "DocumentSnapshot successfully written!");
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.d("데이터실패", "Error writing document", e);
+                                        }
+                                    });
+
+
+                        }
+                    } else {
+                        Toast.makeText(testResult.this, "로그인 실패" + task.getException(), Toast.LENGTH_SHORT).show(); // 왜 안뜨는 지 모름
                     }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.d("데이터실패", "Error writing document", e);
-                    }
-                });
+                }
+
+            });
+        }
+        else if(signUpID == null && userID == null) {
+            Toast.makeText(testResult.this, "테스트를 한 지 얼마 지나지 않았어요.. 다음에 또 해주세요!" , Toast.LENGTH_SHORT).show();
+        }
+        else {
+            fb.collection("personalInfo").document(signUpID)
+                    .set(grade)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Log.d("데이터넣음", "DocumentSnapshot successfully written!");
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.d("데이터실패", "Error writing document", e);
+                        }
+                    });
+        }
+
+
     }
 
 }

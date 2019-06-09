@@ -52,6 +52,7 @@
         <activity android:name=".testMid" />
         <activity android:name=".VoiceActivity" />
         <activity android:name=".sListActivity"/>
+        <activity android:name=".MyInfoActivity"/>
     </application>
 
 </manifest>

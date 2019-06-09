@@ -34,7 +34,6 @@ public class SignupActivity extends AppCompatActivity {
     private EditText email;
     private RadioGroup genderRG;
     private RadioButton genderRB;
-    private String hobby;
     private String signUpId;
 
     @Override
@@ -49,45 +48,51 @@ public class SignupActivity extends AppCompatActivity {
         email = findViewById(R.id.emailText);
 
         genderRG = findViewById(R.id.genderGroup);
-        spinner = (Spinner) findViewById(R.id.hobbySpinner);
-
-        hobby = spinner.getSelectedItem().toString();
 
         Button signUp = (Button) findViewById(R.id.signupButton);
 
         signUp.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signUpId = userDB.collection("signUp").document().getId();
-                genderRB = (RadioButton)findViewById(genderRG.getCheckedRadioButtonId());
 
-                Map<String,Object> post = new HashMap<>();
+                if (id.getText().toString().replace(" ", "").equals("") ||
+                        pw.getText().toString().replace(" ", "").equals("") ||
+                        email.getText().toString().replace(" ", "").equals("")) {
+                    Toast.makeText(SignupActivity.this, "모든 사항을 기재해 주세요", Toast.LENGTH_SHORT).show();
+                }
 
-                post.put("signUpID", signUpId);
-                post.put("userID",id.getText().toString());
-                post.put("userPW",pw.getText().toString());
-                post.put("userEmail",email.getText().toString());
-                post.put("userGender", genderRB.getText().toString());
-                post.put("userHobby",hobby);
+                else {
+                    signUpId = userDB.collection("signUp").document().getId();
+                    genderRB = (RadioButton) findViewById(genderRG.getCheckedRadioButtonId());
 
-                userDB.collection("signUp").document(signUpId)
-                        .set(post)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Toast.makeText(SignupActivity.this,"회원가입 성공!",Toast.LENGTH_SHORT).show();
-                                finish();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(SignupActivity.this,"회원가입 실패",Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                    Map<String, Object> post = new HashMap<>();
 
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
+                    post.put("signUpID", signUpId);
+                    post.put("userID", id.getText().toString());
+                    post.put("userPW", pw.getText().toString());
+                    post.put("userEmail", email.getText().toString());
+                    post.put("userGender", genderRB.getText().toString());
+
+                    userDB.collection("signUp").document(signUpId)
+                            .set(post)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(SignupActivity.this, "회원가입 성공!", Toast.LENGTH_SHORT).show();
+                                    finish();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(SignupActivity.this, "회원가입 실패", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    intent.putExtra("signUpID", signUpId);
+                    startActivity(intent);
+
+                }
             }
 
         });

@@ -82,6 +82,11 @@ public class LoginActivity extends AppCompatActivity {
                         //테스트화면에서 출력하도록 바꾸기
                         Toast.makeText(LoginActivity.this, document.getString("userID") + "님 환영합니다.", Toast.LENGTH_SHORT).show();
 
+                        //로그인 실패시
+                        if(document.getString("userID") == null) {
+                            Toast.makeText(LoginActivity.this, "로그인 실패" + task.getException(), Toast.LENGTH_SHORT).show();
+                        }
+
                         fb.collection("personalInfo")
                                 .whereEqualTo("userID", document.getString("userID"))
                                 .get()
@@ -101,9 +106,14 @@ public class LoginActivity extends AppCompatActivity {
                                     }
                                 });
                         if(secondLogin==false){         //소심도 테스트 결과가 db에 없을 경우
-                            Intent intent = new Intent(getApplicationContext(), testStart.class);
-                            intent.putExtra("userID",id.getText().toString());
-                            startActivity(intent);
+
+                            Intent intent = getIntent();
+                            String signUpID = intent.getStringExtra("signUpID");
+
+                            Intent intent2 = new Intent(getApplicationContext(), testStart.class);
+                            intent2.putExtra("signUpID",signUpID);
+                            intent2.putExtra("userID",id.getText().toString());
+                            startActivity(intent2);
                         }
                     }
                 } else {

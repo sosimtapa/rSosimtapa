@@ -22,6 +22,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -257,6 +258,16 @@ public class MainActivity1 extends AppCompatActivity
             intent_m.putExtra("usrID",userID);
             startActivity(intent_m);
             // Handle the camera action
+        } else if(id == R.id.my_info) {
+            Intent intent_m = new Intent(getApplicationContext(),MyInfoActivity.class);
+            intent_m.putExtra("usrID",userID);
+            startActivity(intent_m);
+
+        } else if(id == R.id.retest) {
+            Intent intent_m = new Intent(getApplicationContext(),testMid.class);
+            intent_m.putExtra("usrID",userID);
+            startActivity(intent_m);
+
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {

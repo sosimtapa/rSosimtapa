@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class testStart extends AppCompatActivity {
     private String signUpID;
@@ -28,6 +29,8 @@ public class testStart extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), testMid.class);
                 intent.putExtra("userID",userID);
+                intent.putExtra("signUpID", signUpID);
+
                 startActivity(intent);
             }
         });

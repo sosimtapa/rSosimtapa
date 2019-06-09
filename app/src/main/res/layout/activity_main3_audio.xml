@@ -63,12 +63,16 @@
 
     </GridLayout>
 
-    //TTS 수정중 0529
     <Button
         android:id="@+id/speakPrac_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="말하기 연습하기"/>
+        android:text="말하기 연습하기"
+        android:background="@drawable/script_prac_btn"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        />
 
 
    <ListView

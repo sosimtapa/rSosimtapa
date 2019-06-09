@@ -7,9 +7,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 public class testMid extends AppCompatActivity {
     private String signUpID;
+    private String userID;
     int sum=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,8 @@ public class testMid extends AppCompatActivity {
         Intent intent = getIntent();
         signUpID = intent.getStringExtra("signUpID");
 
+
+
         Button t2 = (Button) findViewById(R.id.btn_testNext);
         final CheckBox cb1 = findViewById(R.id.checkBox1);
         final CheckBox cb2 = findViewById(R.id.checkBox2);
@@ -27,7 +31,12 @@ public class testMid extends AppCompatActivity {
 
 
         Intent gi = getIntent();
-        final String userID = gi.getStringExtra("userID");
+        userID = gi.getStringExtra("userID");
+
+        if(userID == null) {
+            Intent it = getIntent();
+            userID = it.getStringExtra("usrID");
+        }
 
         t2.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -44,10 +53,13 @@ public class testMid extends AppCompatActivity {
                 if(cb4.isChecked()){
                     sum+=1;
                 }
+
                 Intent intent = new Intent(getApplicationContext(), TestActivity.class);
                 intent.putExtra("hap",sum);
                 intent.putExtra("userID",userID);
-                startActivityForResult(intent,0);
+                intent.putExtra("signUpID", signUpID);
+
+                startActivity(intent);
             }
         });
     }

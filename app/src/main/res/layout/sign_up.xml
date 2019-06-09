@@ -108,16 +108,6 @@
 
             </RadioGroup>
 
-            <Spinner
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:id="@+id/hobbySpinner"
-                >
-
-
-            </Spinner>
             <Button
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"

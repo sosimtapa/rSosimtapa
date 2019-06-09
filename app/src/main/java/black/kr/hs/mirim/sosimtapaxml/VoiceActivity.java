@@ -172,6 +172,7 @@ public class VoiceActivity extends AppCompatActivity implements View.OnClickList
 
     //파이어베이스에 대본 추가하는 메소드 추가
     public void scriptAdd() {
+
         Intent intent = getIntent();
         userID = intent.getStringExtra("userID");
 
