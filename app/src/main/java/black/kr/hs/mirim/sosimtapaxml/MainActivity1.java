@@ -22,6 +22,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -83,7 +84,13 @@ public class MainActivity1 extends AppCompatActivity
                         startActivity(intent1);
                         break;
                     case R.id.btn_top2:
+
+                        Intent intent = getIntent();
+                        userID = intent.getStringExtra("userID");
+
                         Intent intent2= new Intent(getApplicationContext(),Main3Audio.class);
+                        intent2.putExtra("userID", userID);
+
                         startActivity(intent2);
                         break;
                     case R.id.btn_top3:
@@ -244,11 +251,16 @@ public class MainActivity1 extends AppCompatActivity
             Intent intent_m = new Intent(getApplicationContext(),MyPlace.class);
             intent_m.putExtra("userID",userID);
             startActivity(intent_m);
-        } else if (id == R.id.nav_gallery) {
+            // Handle the camera action
+        } else if(id == R.id.my_info) {
+            Intent intent_m = new Intent(getApplicationContext(),MyInfoActivity.class);
+            intent_m.putExtra("usrID",userID);
+            startActivity(intent_m);
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
+        } else if(id == R.id.retest) {
+            Intent intent_m = new Intent(getApplicationContext(),testMid.class);
+            intent_m.putExtra("usrID",userID);
+            startActivity(intent_m);
 
         } else if (id == R.id.nav_share) {
 

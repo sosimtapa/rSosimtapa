@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import junit.framework.Test;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -19,11 +22,16 @@ import java.util.TimerTask;
 public class TestActivity extends AppCompatActivity {
 
     int count=0;
+    private String signUpID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test);
+
+        Intent intent = getIntent();
+        signUpID = intent.getStringExtra("signUpID");
+
 
         Button b = (Button)findViewById(R.id.btn_testFinish);
 
@@ -54,6 +62,7 @@ public class TestActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), testResult.class);
                 intent.putExtra("hap",count);
                 intent.putExtra("userID",userID);
+                intent.putExtra("signUpID", signUpID);
                 startActivityForResult(intent,0);
             }
         });

@@ -5,21 +5,18 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/my_info"
+            android:icon="@drawable/ic_person"
+            android:title="내 정보" />
+        <item
+            android:id="@+id/retest"
+            android:icon="@drawable/ic_check_box_black_24dp"
+            android:title="소심도 테스트" />
+        <item
             android:id="@+id/my_place"
             android:icon="@drawable/ic_wb_incandescent"
             android:title="즐겨찾기" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+
     </group>
 
     <item android:title="Communicate">
