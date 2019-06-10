@@ -7,21 +7,24 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MyPlace"
     android:orientation="vertical"
+    android:background="#F2F2F2"
     tools:showIn="@layout/activity_my_place">
 
     <TextView
         android:textStyle="bold"
         android:layout_gravity="center"
-        android:text="My FAVORITE Place"
+        android:text="My FAVORITE PLACE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="30dp"/>
 
-  <!--  <android.support.v7.widget.RecyclerView
-        android:id="@+id/placeRecycle"
-        android:scrollbars="vertical"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/place_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
--->
+        android:layout_height="match_parent"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager">
+    </android.support.v7.widget.RecyclerView>
+
+
 </LinearLayout>

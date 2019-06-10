@@ -99,7 +99,6 @@ public class MainActivity1 extends AppCompatActivity
 
         //우측하단 글쓰기 버튼
         findViewById(R.id.main_write_button).setOnClickListener(this);
-
        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.main_write_button);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,7 +142,7 @@ public class MainActivity1 extends AppCompatActivity
             }
         });
 
-    }
+    }   // onCreate
 
     @Override
     public void onClick(View v) {
