@@ -39,11 +39,15 @@ public class MyPlace extends AppCompatActivity {
     private List<pBoard> pBoardList;
     private PlaceAdapter mAdapter;
 
+    private View view;
+    int eixitplace = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_place);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        view = findViewById(R.id.view);
 
         if (Build.VERSION.SDK_INT >= 21) {      // 21 버전 이상일 경우
             getWindow().setStatusBarColor(Color.rgb(255,109,112));
@@ -61,8 +65,7 @@ public class MyPlace extends AppCompatActivity {
                 Intent intent = new Intent(MyPlace.this, MyPlaceWrite.class);
                 intent.putExtra("userID",userID);
                 startActivity(intent);
-                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();*/
+
             }
         });
 
@@ -75,6 +78,7 @@ public class MyPlace extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
+                    eixitplace = 1;
                     for(QueryDocumentSnapshot dc: task.getResult()){
                         String id = (String) dc.getData().get("userID");
                         String editAddress = (String)dc.getData().get("userEditAddress");
@@ -85,12 +89,33 @@ public class MyPlace extends AppCompatActivity {
                     }
                     mAdapter = new MyPlace.PlaceAdapter(pBoardList);
                     recyclerView.setAdapter(mAdapter);
+
                 } else {
                     Log.w("음..","이건 task자체 실패시");
                 }
             }
 
         });
+
+        if(eixitplace == 0){
+            Log.w ("데이터가없음", Integer.toString(eixitplace));
+            final Snackbar snackbar = Snackbar.make(view,"저장된 장소가 없습니다. 등록버튼을 눌러 추가해 보세요",Snackbar.LENGTH_INDEFINITE);
+            snackbar.setAction("등록",new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MyPlace.this, MyPlaceWrite.class);
+                    intent.putExtra("userID",userID);
+                    startActivity(intent);
+                }
+            });
+            snackbar.show();
+
+            /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+*/
+        }else{
+            Log.w("데이터가있음", Integer.toString(eixitplace));
+        }
 
     }
 

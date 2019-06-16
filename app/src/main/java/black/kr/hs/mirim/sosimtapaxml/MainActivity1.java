@@ -257,12 +257,16 @@ public class MainActivity1 extends AppCompatActivity
             intent_m.putExtra("usrID",userID);
             startActivity(intent_m);
 
-        } else if(id == R.id.retest) {
+        } else if(id == R.id.reset) {
             Intent intent_m = new Intent(getApplicationContext(),testMid.class);
             intent_m.putExtra("usrID",userID);
             startActivity(intent_m);
 
-        } else if (id == R.id.nav_share) {
+        } else if(id == R.id.challenge ){
+            Intent intent_m = new Intent(getApplicationContext(),Challenge.class);
+            startActivity(intent_m);
+        }
+        else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 
