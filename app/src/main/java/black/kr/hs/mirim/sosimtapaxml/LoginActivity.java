@@ -101,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
                                             }
                                             secondLogin=true;
                                         } else {
-                                            Log.w("else문","들으옴");
+                                            Log.w("else문","들어옴");
                                         }
                                     }
                                 });

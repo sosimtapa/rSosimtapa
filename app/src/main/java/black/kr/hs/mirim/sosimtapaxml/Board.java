@@ -8,7 +8,7 @@ public class Board {
     private String name;
     private int img;
 
-    public Board(){
+    public Board(String id, String address, String content){
     }
 
   /*  public Board(String id, String title, String contents, String name) {

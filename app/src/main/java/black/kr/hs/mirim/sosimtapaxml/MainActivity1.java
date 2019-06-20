@@ -106,7 +106,6 @@ public class MainActivity1 extends AppCompatActivity
 
         //우측하단 글쓰기 버튼
         findViewById(R.id.main_write_button).setOnClickListener(this);
-
        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.main_write_button);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,17 +149,12 @@ public class MainActivity1 extends AppCompatActivity
             }
         });
 
-    }
+    }   // onCreate
 
     @Override
     public void onClick(View v) {
 
     }
-
-/*    @Override
-    public void onClick(View v) {
-        startActivity(new Intent(this,Main1WriteActivity.class));
-    }*/
 
     private class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder>{
 
@@ -255,7 +249,7 @@ public class MainActivity1 extends AppCompatActivity
 
         if (id == R.id.my_place) {
             Intent intent_m = new Intent(getApplicationContext(),MyPlace.class);
-            intent_m.putExtra("usrID",userID);
+            intent_m.putExtra("userID",userID);
             startActivity(intent_m);
             // Handle the camera action
         } else if(id == R.id.my_info) {
@@ -267,12 +261,6 @@ public class MainActivity1 extends AppCompatActivity
             Intent intent_m = new Intent(getApplicationContext(),testMid.class);
             intent_m.putExtra("usrID",userID);
             startActivity(intent_m);
-
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
 
