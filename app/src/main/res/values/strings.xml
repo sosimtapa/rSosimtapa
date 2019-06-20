@@ -14,22 +14,27 @@
     <string name="script1_5">어르신, 저는 아까부터 계속 앉아있어서 괜찮으니까 여기에 앉으세요!</string>
     <string name="script1_6">죄송하지만 작은 목소리로 통화해주세요.</string>
 
-    <string name="script2_1">죄송하지만 조금만 조용히 해주셨으면 좋겠어요.</string>
+    <string name="script2_1">공공장소에서 이렇게 크게 떠드시면 안돼요.</string>
     <string name="script2_2"> 공공장소인 만큼 다른 사람들에게도 피해가지 않도록 주의 부탁드립니다.</string>
 
     <string name="script3_1">저기요, 여기 머리카락이 들어있는데 새로 만든 거로 바꿔주실 수 있나요?</string>
-    <string name="script3_2">냅킨(물수건)이 부족한데 채워주실 수 있을까요?</string>
-    <string name="script3_3">오늘 O시에 OOO으로 O명 예약했는데 자리가 어디인가요?</string>
+    <string name="script3_2">냅킨이 부족한데 채워주실 수 있을까요?</string>
+    <string name="script3_3">오늘 오후 8시에 홍길동으로 4명 예약했는데 자리 안내해주실 수 있나요?</string>
 
-    <string name="script4_1">죄송하지만, 제가 정말 급한 일이 있어서 비켜주실 수 있나요?</string>
-    <string name="script4_2">제가 이쪽 동네는 처음이라서 길을 잘 모르는데 OOO으로 가려면 어디로 가야 하나요?</string>
+    <string name="script4_1">죄송합니다. 제가 정말 급한 일이 있어서 잠시 비켜주세요!</string>
+    <string name="script4_2">제가 이쪽 동네는 처음이라서 길을 잘 모르는데 사거리로 가려면 어디로 가야 하나요?</string>
     <string name="script4_3">저도 잘 몰라서 알려드릴 수가 없네요.. 도움 못 드려서 죄송합니다.</string>
 
-    <string name="script5_1">OO동 OO아파트 123동 101호인데요. OO떡볶이 OO맛 1개로 갖다 주세요.</string>
-    <string name="script5_2">혹시 얼마나 걸릴까요?</string>
-    <string name="script5_3">총 금액이 얼마인가요? 카드 결제되나요?</string>
-    <string name="script5_4">잠시만요, 지금 나가요! 조금만 기다려주세요.</string>
-    <string name="script5_5">문 앞에 두고 가주세요.</string>
+    <string name="script5_1">신림동 오름 아파트 123동 101호인데요. 맛나떡볶이 매운맛 1개로 갖다 주세요.</string>
+    <string name="script5_2">총 금액이 얼마인가요? 카드 결제되나요?</string>
+    <string name="script5_3">잠시만요, 지금 나가요! 조금만 기다려주세요.</string>
+    <string name="script5_4">문 앞에 두고 가주세요.</string>
+
+    <string name="script6_1">선생님, 방금 설명하신 부분이 이해하기 어려워요. 한 번만 더 설명해주세요!</string>
+    <string name="script6_2">방금 일은 너가 잘못한 게 맞아. 다음부터 조심히 행동할 필요가 있다고 생각해.</string>
+    <string name="script6_3">내가 짐이 너무 많아서 그런데 혹시 조금만 들어줄 수 있어?</string>
+
+
     <string name="title_activity_my_place">MyPlace</string>
 </resources>
 

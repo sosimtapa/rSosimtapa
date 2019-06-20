@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class scriptPic5 extends AppCompatActivity implements View.OnClickListener{
 
-    int scriptList[] = {R.string.script5_1,R.string.script5_2, R.string.script5_3, R.string.script5_4, R.string.script5_5};
+    int scriptList[] = {R.string.script5_1,R.string.script5_2, R.string.script5_3, R.string.script5_4};
     int listCount = 0;
     TextView tvScript;
 
@@ -35,6 +35,6 @@ public class scriptPic5 extends AppCompatActivity implements View.OnClickListene
             listCount--;
         }
 
-        tvScript.setText(scriptList[listCount]);
+        tvScript.setText(scriptList[listCount-1]);
     }
 }

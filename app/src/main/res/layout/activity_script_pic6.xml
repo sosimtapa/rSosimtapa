@@ -10,24 +10,34 @@
 
     <ImageView
         android:src="@drawable/delivery"
-        android:id="@+id/img5"
+        android:id="@+id/img6"
         android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="400dp" />
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="6"
-        android:text=" - OO동 OO아파트 123동 101호인데요.
- - 엽기떡볶이 착한맛 1개로 갖다 주세요.
- - 혹시 얼마나 걸릴까요?
- - 총 금액이 얼마인가요? 카드 결제되나요?
- - 잠시만요! 조금만 기다려주세요!
- - 감사합니다!
- - 문 앞에 두고 가주세요!!
-"
-        android:textColor="#000000"
-        android:textSize="20dp" />
+        android:layout_height="match_parent">
+        <ImageButton
+            android:id="@+id/prev6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp" />
+
+        <TextView
+            android:id="@+id/textViewScript"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20dp"/>
+
+        <ImageButton
+            android:id="@+id/next6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
+    </LinearLayout>
 
 </LinearLayout>

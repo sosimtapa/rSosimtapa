@@ -27,11 +27,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="앞으로 8개의 질문들이 당신을 기다리고 있습니다."/>
+        android:text="앞으로 8개의 질문이 기다리고 있습니다."/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="너무 고민하지 마시고 가볍게 문제를 풀어주세요!"/>
+        android:text="너무 고민하지 마시고 가볍게 문제를 풀어보세요!"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -35,6 +35,6 @@ public class scriptPic3 extends AppCompatActivity implements View.OnClickListene
             listCount--;
         }
 
-        tvScript.setText(scriptList[listCount]);
+        tvScript.setText(scriptList[listCount-1]);
     }
 }
