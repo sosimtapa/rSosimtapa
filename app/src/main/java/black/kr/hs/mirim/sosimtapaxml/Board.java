@@ -7,6 +7,7 @@ public class Board {
     private String contents;
     private String name;
     private int img;
+//test
 
     public Board(String id, String address, String content){
     }
